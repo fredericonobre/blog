@@ -1,14 +1,13 @@
-/* Paleta Estrada e Natureza */
+/* Variáveis de Cores para facilitar a troca */
 :root {
-    --cor-fundo: #f4f4f0; /* Off-white com um toque de areia/terra */
-    --cor-texto: #2c3e50; /* Cinza asfalto escuro para boa leitura */
-    --cor-destaque: #2d6a4f; /* Verde floresta */
-    --cor-destaque-hover: #1b4332; /* Verde mais escuro (mata fechada) */
-    --cor-secundaria: #7f8c8d; /* Cinza neblina */
+    --cor-fundo: #f4f7f6;
+    --cor-texto: #333333;
+    --cor-destaque: #4361ee;
+    --cor-secundaria: #888888;
     --cor-branco: #ffffff;
-    --cor-faixa-pista: #e9c46a; /* Amarelo quente das faixas da estrada */
 }
 
+/* Zerando margens padrão do navegador */
 * {
     margin: 0;
     padding: 0;
@@ -22,12 +21,11 @@ body {
     line-height: 1.6;
 }
 
-/* Cabeçalho com tons de floresta e detalhe de pista */
+/* Cabeçalho Moderno com Gradiente */
 .site-header {
-    background: linear-gradient(135deg, #1b4332, #2d6a4f);
-    border-bottom: 4px solid var(--cor-faixa-pista);
+    background: linear-gradient(135deg, #4361ee, #3a0ca3);
     color: var(--cor-branco);
-    padding: 5rem 20px 7rem; 
+    padding: 5rem 20px 7rem; /* Espaço extra embaixo para sobreposição */
     text-align: center;
 }
 
@@ -43,21 +41,24 @@ body {
     opacity: 0.9;
 }
 
+/* Container Principal centralizado */
 .container {
     max-width: 800px;
-    margin: -60px auto 40px; 
+    margin: -60px auto 40px; /* O -60px faz o cartão "subir" no cabeçalho */
     padding: 0 20px;
     position: relative;
 }
 
+/* Estilo do Cartão da Postagem */
 .post-card {
     background-color: var(--cor-branco);
     border-radius: 12px;
-    overflow: hidden; 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+    overflow: hidden; /* Faz a imagem respeitar as bordas arredondadas */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra suave */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Efeito de flutuar ao passar o mouse */
 .post-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
@@ -74,10 +75,10 @@ body {
     padding: 30px 40px;
 }
 
-/* Etiqueta colorida - Tom de folha clara */
+/* Etiqueta colorida de categoria */
 .categoria {
-    background-color: #d8f3dc;
-    color: var(--cor-destaque-hover);
+    background-color: #e0e7ff;
+    color: var(--cor-destaque);
     font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -101,10 +102,10 @@ body {
 
 .post-content p {
     margin-bottom: 25px;
-    color: var(--cor-texto);
+    color: #555;
 }
 
-/* Botão Verde Floresta */
+/* Botão "Leia mais" moderno */
 .btn-leia-mais {
     display: inline-block;
     text-decoration: none;
@@ -119,9 +120,9 @@ body {
 .btn-leia-mais:hover {
     background-color: var(--cor-destaque);
     color: var(--cor-branco);
-    border-color: var(--cor-destaque);
 }
 
+/* Rodapé discreto */
 footer {
     text-align: center;
     padding: 30px 20px;
