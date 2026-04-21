@@ -125,46 +125,34 @@ body {
 /* Quando o post tiver a classe 'post-split', ele usa Flexbox */
 .post-split {
     display: flex;
-    align-items: stretch; 
+    align-items: stretch; /* Faz a imagem e o texto terem a mesma altura */
 }
 
 .post-split-image {
-    flex: 0 0 49%; 
+    flex: 0 0 49%; /* A mágica está aqui: não cresce(0), não encolhe(0), base exata de 49% */
     max-width: 49%;
-    display: flex;
-    flex-direction: column; /* Transforma a caixa numa coluna */
+    display: flex; /* Transforma a caixa da imagem num flex container */
 }
 
 .post-split .post-content {
-    flex: 1; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centraliza o texto verticalmente! */
+    flex: 1; /* Faz o texto preencher o resto do espaço sem empurrar a foto */
 }
 
 .post-split-image img {
     width: 100%;
     height: 100%;
-    flex-grow: 1; /* Força a imagem a preencher qualquer lacuna */
-    object-fit: cover; 
-    display: block; 
-    /* Arredondamento direto na imagem para evitar bugs do navegador */
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
+    object-fit: cover; /* Corta a imagem para preencher o espaço sem distorcer */
+    display: block; /* Remove o espaço fantasma das "perninhas" das letras */
 }
 
-/* Ajuste para celular */
+/* Ajuste importante para celular: desativa a divisão em telas pequenas */
 @media (max-width: 640px) {
     .post-split {
-        flex-direction: column; 
+        flex-direction: column; /* Volta a ficar um em cima do outro */
     }
     .post-split-image {
         max-width: 100%;
-        height: 495px; /* Mantive a sua altura preferida! */
-    }
-    .post-split-image img {
-        border-bottom-left-radius: 0; /* Remove o arredondamento de baixo no celular */
-        border-top-right-radius: 12px; /* Arredonda o topo direito para acompanhar o cartão */
+        height: 495px;
     }
 }
 
