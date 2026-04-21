@@ -16,10 +16,10 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: sans-serif;
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
-    line-height: 1.6;
+    line-height: 2.0;
 }
 
 /* Cabeçalho com tons de floresta e detalhe de pista */
@@ -65,7 +65,7 @@ body {
 
 .post-image {
     width: 100%;
-    height: 400px;
+    height: 390px;
     object-fit: cover;
     display: block;
 }

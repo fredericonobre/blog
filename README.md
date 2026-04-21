@@ -1,5 +1,5 @@
 # Blog Na Estrada
-Primeiro blog. Desenvolvildo com auxílio de estagiários de **Inteligência Artificial** - listados abaixo.
+Primeiro blog. Desenvolvildo com auxílio de "estagiários" de **Inteligência Artificial** - listados abaixo.
 
 ## Páginas 
 - [Blog](https://fredericonobre.github.io/blog/)
@@ -23,9 +23,6 @@ Primeiro blog. Desenvolvildo com auxílio de estagiários de **Inteligência Art
 ## Aprendizados
 - Estruturação de página web.
 - Uso de variáveis CSS para gerenciar cores.
-- Fluxo de trabalho com Git (clone, commit, push) e GitHub via VS Code.
+- Fluxo de trabalho com Git (clone, commit, push) e GitHub via VS Code e/ou terminal.
 - Publicação de página na internet.
 - Uso de linguagem de 'markdown' para criar README.md
-
----
-Frederico
