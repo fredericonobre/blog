@@ -143,11 +143,13 @@ body {
 /*    max-width: 40%; /* A foto ocupa 40% da largura do cartão */
 /*} */ 
 
+/*
 .post-split-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Corta a imagem para preencher o espaço sem distorcer */
+    object-fit: cover; Corta a imagem para preencher o espaço sem distorcer 
 }
+*/
 
 /* Ajuste importante para celular: desativa a divisão em telas pequenas */
 @media (max-width: 640px) {
