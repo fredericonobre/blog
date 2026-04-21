@@ -137,12 +137,11 @@ body {
     flex: 1; /* Faz o texto preencher o resto do espaço sem empurrar a foto */
 }
 
-/*
-regra anterior
-.post-split-image {
-    flex: 1; /* Ocupa uma parte do espaço */
+/* regra anterior */
+/* .post-split-image { */
+/*    flex: 1; /* Ocupa uma parte do espaço */
 /*    max-width: 40%; /* A foto ocupa 40% da largura do cartão */
-/*}
+/*} */ 
 
 .post-split-image img {
     width: 100%;
