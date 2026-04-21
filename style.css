@@ -122,6 +122,34 @@ body {
     border-color: var(--cor-destaque);
 }
 
+/* Quando o post tiver a classe 'post-split', ele usa Flexbox */
+.post-split {
+    display: flex;
+    align-items: stretch; /* Faz a imagem e o texto terem a mesma altura */
+}
+
+.post-split-image {
+    flex: 1; /* Ocupa uma parte do espaço */
+    max-width: 49.5%; /* A foto ocupa 49,5% da largura do cartão */
+}
+
+.post-split-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Corta a imagem para preencher o espaço sem distorcer */
+}
+
+/* Ajuste importante para celular: desativa a divisão em telas pequenas */
+@media (max-width: 600px) {
+    .post-split {
+        flex-direction: column; /* Volta a ficar um em cima do outro */
+    }
+    .post-split-image {
+        max-width: 100%;
+        height: 250px;
+    }
+}
+
 footer {
     text-align: center;
     padding: 30px 20px;
