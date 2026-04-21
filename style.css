@@ -130,7 +130,7 @@ body {
 
 .post-split-image {
     flex: 1; /* Ocupa uma parte do espaço */
-    max-width: 49.5%; /* A foto ocupa 49,5% da largura do cartão */
+    max-width: 40%; /* A foto ocupa 40% da largura do cartão */
 }
 
 .post-split-image img {
@@ -140,13 +140,13 @@ body {
 }
 
 /* Ajuste importante para celular: desativa a divisão em telas pequenas */
-@media (max-width: 600px) {
+@media (max-width: 640px) {
     .post-split {
         flex-direction: column; /* Volta a ficar um em cima do outro */
     }
     .post-split-image {
         max-width: 100%;
-        height: 250px;
+        height: 495px;
     }
 }
 
