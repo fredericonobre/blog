@@ -1,86 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frederico</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Na Estrada — Viagens & Vida</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-content">
-            <h1>Na Estrada</h1>
-            <p>Vai começar a viagem.</p>
+
+  <!-- BARRA DE TOPO -->
+  <header class="topbar">
+    <a href="index.html" class="topbar-name">Frederico Nobre</a>
+    <span class="topbar-tag">Viagens & Vida</span>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Um diário de estrada</p>
+      <h1 class="hero-title">
+        Na<br>
+        <em>Estrada</em>
+      </h1>
+      <div class="hero-divider"></div>
+      <p class="hero-sub">Vai começar a viagem.<br>O caminho é mais importante do que o destino final.</p>
+    </div>
+    <div class="hero-image">
+      <img src="images/road.jpg" alt="Estrada serpenteado por uma montanha" />
+      <span class="hero-caption">Em algum lugar pelo mundo</span>
+    </div>
+  </section>
+
+  <!-- RÓTULO DE SEÇÃO -->
+  <div class="section-label">
+    <span>Postagens recentes</span>
+  </div>
+
+  <!-- GRID DE POSTS -->
+  <main class="posts-grid">
+
+    <!-- Post 1 — Destaque -->
+    <article class="post-card">
+      <div class="post-card-image">
+        <img src="images/09.jpg" alt="Linda cachoeira de águas cristalinas" />
+      </div>
+      <div class="post-card-body">
+        <div class="post-meta">
+          <span class="post-category">Viagens & Vida</span>
+          <span class="post-date">21 de Abril de 2026</span>
         </div>
-    </header>
+        <h2 class="post-title">Choose only one master: nature.</h2>
+        <p class="post-excerpt">Rembrandt van Rijn sabia bem disso. A natureza como mestre absoluto, guia silencioso de tudo o que criamos e somos.</p>
+        <a href="post.rembrandt.html" class="post-link">Continuar lendo</a>
+      </div>
+    </article>
 
-    <main class="container">
-        <article class="post-card">
-            <img src="images/09.jpg" alt="Linda cachoeira de águas cristalinas" class="post-image">
-            <div class="post-content">
-                <span class="categoria">Viagens & Vida</span>
-                <h2></h2>
-                <p class="data">21 de Abril de 2026</p>
-                <p>Choose only one master: nature.
-                <br>Rembrandt van Rijn</p>
-                <a href="post.rembrandt.html" class="btn-leia-mais">Continuar lendo</a>
-            </div>
-        </article>
+    <!-- Post 2 — Einstein -->
+    <article class="post-card">
+      <div class="post-card-image">
+        <img src="images/08.jpg" alt="Linda cachoeira lembrando uma ducha" />
+      </div>
+      <div class="post-card-body">
+        <div class="post-meta">
+          <span class="post-category">Viagens & Vida</span>
+          <span class="post-date">20 de Abril de 2026</span>
+        </div>
+        <h2 class="post-title">Look deep into nature, and then you will understand everything better.</h2>
+        <p class="post-excerpt">Albert Einstein</p>
+        <a href="post.einstein.html" class="post-link">Continuar lendo</a>
+      </div>
+    </article>
 
-        <article class="post-card">
-            <img src="images/08.jpg" alt="Linda cachoeira lembrando uma ducha" class="post-image">
-            <div class="post-content">
-                <span class="categoria">Viagens & Vida</span>
-                <h2></h2>
-                <p class="data">20 de Abril de 2026</p>
-                <p>Look deep into nature, and then you will understand everything better. 
-                <br>Albert Einstein</p>
-                <a href="post.einstein.html" class="btn-leia-mais">Continuar lendo</a>
-            </div>
-        </article>
+    <!-- Post 3 — Confúcio (card de citação) -->
+    <article class="post-card is-quote">
+      <div class="post-card-body">
+        <div class="post-meta">
+          <span class="post-category">Viagens & Vida</span>
+          <span class="post-date">20 de Abril de 2026</span>
+        </div>
+        <h2 class="post-title">"Roads were made for journeys, not destinations."</h2>
+        <p class="post-author">— Confúcio</p>
+        <a href="post.confucius.html" class="post-link">Continuar lendo</a>
+      </div>
+    </article>
 
-        <article class="post-card">
-            <img src="images/id-buzz.jpg" alt="Van no acampamento" class="post-image">
-            <div class="post-content">
-                <span class="categoria">Viagens & Vida</span>
-                <h2></h2>
-                <p class="data">20 de Abril de 2026</p>
-                <p>O visual antigo era muito chinfrim, então decidi repaginar totalmente. Agora, começa a ficar divertido.</p>
-                <br>
-               <!-- <a href="#" class="btn-leia-mais">Continuar lendo</a> -->
-            </div>
-        </article>
+    <!-- Post 4 — Van -->
+    <article class="post-card">
+      <div class="post-card-image">
+        <img src="images/id-buzz.jpg" alt="Van no acampamento" />
+      </div>
+      <div class="post-card-body">
+        <div class="post-meta">
+          <span class="post-category">Viagens & Vida</span>
+          <span class="post-date">20 de Abril de 2026</span>
+        </div>
+        <h2 class="post-title">Repaginando a estrada</h2>
+        <p class="post-excerpt">O visual antigo era muito chinfrim, então decidi repaginar totalmente. Agora, começa a ficar divertido.</p>
+      </div>
+    </article>
 
-        <article class="post-card">
-            <img src="images/road.jpg" alt="Estrada serpenteado por uma montanha" class="post-image">
-            <div class="post-content">
-                <span class="categoria">Viagens & Vida</span>
-                <h2></h2>
-                <p class="data">20 de Abril de 2026</p>
-                <p>Roads were made for journeys, not destinations. 
-                <br>Confucius</p>
-                <a href="post.confucius.html" class="btn-leia-mais">Continuar lendo</a>
-            </div>
-        </article>
+    <!-- Post 5 — Ehrmann -->
+    <article class="post-card">
+      <div class="post-card-image">
+        <img src="images/author.jpeg" alt="Foto do autor Frederico" />
+      </div>
+      <div class="post-card-body">
+        <div class="post-meta">
+          <span class="post-category">Viagens & Vida</span>
+          <span class="post-date">17 de Abril de 2026</span>
+        </div>
+        <h2 class="post-title">O Caminho</h2>
+        <p class="post-excerpt">Bem-vindo ao blog. O caminho é mais importante do que o destino final. Para começar, o poema Desiderata de Max Ehrmann, 1927.</p>
+        <a href="post.ehrmann.html" class="post-link">Continuar lendo</a>
+      </div>
+    </article>
 
-        <article class="post-card post-split">
-            <div class="post-split-image">
-                <img src="images/author.jpeg" alt="Foto do autor Frederico">
-            </div>
-            <div class="post-content">
-                <span class="categoria">Viagens & Vida</span>
-                <h2>O Caminho</h2>
-                <p class="data">17 de Abril de 2026</p>
-                <p>Olá. Bem-vindo ao blog. Aproveite as postagens. Afinal, o caminho é mais importante do que o destino final.</p>
-                <p>Para começar, trago poema Desiderata de Max Ehrmann escrito em 1927.</p>
-                <a href="post.ehrmann.html" class="btn-leia-mais">Continuar lendo</a>
-            </div>
-        </article>
-        
-    </main>
+  </main>
 
-    <footer>
-        <p>&copy; 2026 Na Estrada. Feito com HTML, CSS e chocolate quente aditivado com café.</p>
-    </footer>
+  <!-- RODAPÉ -->
+  <footer>
+    <span class="footer-brand">Na Estrada</span>
+    <p class="footer-copy">
+      © 2026 Na Estrada<br>
+      Feito com HTML, CSS e chocolate quente aditivado com café.
+    </p>
+  </footer>
+
 </body>
 </html>

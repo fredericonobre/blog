@@ -1,176 +1,560 @@
-/* Paleta Estrada e Natureza */
+/* ═══════════════════════════════════════════════
+   NA ESTRADA — Folha de Estilos Principal
+   ═══════════════════════════════════════════════ */
+
+/* ─── FONTES ─── */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ─── VARIÁVEIS ─── */
 :root {
-    --cor-fundo: #f4f4f0; /* Off-white com um toque de areia/terra */
-    --cor-texto: #2c3e50; /* Cinza asfalto escuro para boa leitura */
-    --cor-destaque: #2d6a4f; /* Verde floresta */
-    --cor-destaque-hover: #1b4332; /* Verde mais escuro (mata fechada) */
-    --cor-secundaria: #7f8c8d; /* Cinza neblina */
-    --cor-branco: #ffffff;
-    --cor-faixa-pista: #e9c46a; /* Amarelo quente das faixas da estrada */
+  --ink:    #1c1a16;
+  --cream:  #f7f2ea;
+  --warm:   #ede5d8;
+  --terra:  #b5724a;
+  --gold:   #c9a96e;
+  --muted:  #8a7f72;
+  --serif:  'Cormorant Garamond', Georgia, serif;
+  --sans:   'DM Sans', sans-serif;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ─── RESET ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+html { scroll-behavior: smooth; }
 
 body {
-    font-family: sans-serif;
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    line-height: 2.0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Cabeçalho com tons de floresta e detalhe de pista */
-.site-header {
-    background: linear-gradient(135deg, #1b4332, #2d6a4f);
-    border-bottom: 4px solid var(--cor-faixa-pista);
-    color: var(--cor-branco);
-    padding: 5rem 20px 7rem; 
-    text-align: center;
+/* ─── TEXTURA DE GRÃO ─── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.35;
 }
 
-.header-content h1 {
-    font-size: 2.8rem;
-    font-weight: 600;
-    margin-bottom: 10px;
+/* ═══════════════════════════════════════════════
+   ANIMAÇÕES
+   ═══════════════════════════════════════════════ */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.header-content p {
-    font-size: 1.1rem;
-    font-weight: 300;
-    opacity: 0.9;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-.container {
-    max-width: 1020px;
-    margin: -60px auto 40px; 
-    padding: 0 20px;
-    position: relative;
+@keyframes riseUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
+
+@keyframes slowZoom {
+  from { transform: scale(1.06); }
+  to   { transform: scale(1); }
+}
+
+/* ═══════════════════════════════════════════════
+   BARRA DE TOPO (compartilhada)
+   ═══════════════════════════════════════════════ */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  background: rgba(247, 242, 234, 0.92);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+  animation: fadeDown 0.6s ease both;
+}
+
+.topbar-name {
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.topbar-name:hover { color: var(--ink); }
+
+.topbar-tag {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--terra);
+}
+
+/* ═══════════════════════════════════════════════
+   RODAPÉ (compartilhado)
+   ═══════════════════════════════════════════════ */
+footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 3rem 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.footer-brand {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ink);
+}
+
+.footer-copy {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  text-align: right;
+  line-height: 1.8;
+}
+
+/* ═══════════════════════════════════════════════
+   PÁGINA INICIAL — HERO
+   ═══════════════════════════════════════════════ */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 82vh;
+  animation: fadeIn 0.9s ease 0.1s both;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 5rem 3.5rem;
+  background: var(--cream);
+}
+
+.hero-eyebrow {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(4.5rem, 8vw, 8rem);
+  font-weight: 300;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--terra);
+  display: block;
+}
+
+.hero-sub {
+  margin-top: 2.5rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  max-width: 28ch;
+  line-height: 1.9;
+}
+
+.hero-divider {
+  width: 3rem;
+  height: 1px;
+  background: var(--gold);
+  margin: 2rem 0;
+}
+
+.hero-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.85);
+  transition: transform 8s ease;
+}
+
+.hero-image:hover img { transform: scale(1.04); }
+
+.hero-caption {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.05em;
+}
+
+/* ═══════════════════════════════════════════════
+   PÁGINA INICIAL — RÓTULO DE SEÇÃO
+   ═══════════════════════════════════════════════ */
+.section-label {
+  padding: 3.5rem 3.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-label span {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* ═══════════════════════════════════════════════
+   PÁGINA INICIAL — GRID DE POSTS
+   ═══════════════════════════════════════════════ */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2px;
+  padding: 0 2px 2px;
+}
+
+.post-card:nth-child(1) { grid-column: span 7; }
+.post-card:nth-child(2) { grid-column: span 5; }
+.post-card:nth-child(3) { grid-column: span 4; }
+.post-card:nth-child(4) { grid-column: span 4; }
+.post-card:nth-child(5) { grid-column: span 4; }
 
 .post-card {
-    background-color: var(--cor-branco);
-    border-radius: 12px;
-    overflow: hidden; 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background: var(--warm);
+  cursor: pointer;
+  animation: riseUp 0.7s ease both;
 }
 
-.post-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+.post-card:nth-child(1) { animation-delay: 0.15s; }
+.post-card:nth-child(2) { animation-delay: 0.25s; }
+.post-card:nth-child(3) { animation-delay: 0.35s; }
+.post-card:nth-child(4) { animation-delay: 0.45s; }
+.post-card:nth-child(5) { animation-delay: 0.55s; }
+
+.post-card-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
 }
 
-.post-image {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    display: block;
+.post-card:nth-child(1) .post-card-image { aspect-ratio: 16 / 10; }
+.post-card:nth-child(2) .post-card-image { aspect-ratio: 3 / 4; }
+
+.post-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.82);
+  transition: transform 0.6s ease, filter 0.6s ease;
+  display: block;
 }
 
-.post-content {
-    padding: 30px 40px;
+.post-card:hover .post-card-image img {
+  transform: scale(1.05);
+  filter: saturate(1);
 }
 
-/* Etiqueta colorida - Tom de folha clara */
-.categoria {
-    background-color: #d8f3dc;
-    color: var(--cor-destaque-hover);
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 5px 12px;
-    border-radius: 20px;
-    display: inline-block;
-    margin-bottom: 15px;
+.post-card-body {
+  padding: 1.75rem 2rem 2rem;
+  background: var(--cream);
 }
 
-.post-content h2 {
-    font-size: 1.8rem;
-    margin-bottom: 5px;
-    color: #1a1a1a;
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
-.data {
-    color: var(--cor-secundaria);
-    font-size: 0.9rem;
-    margin-bottom: 20px;
+.post-category {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terra);
+  font-weight: 500;
 }
 
-.post-content p {
-    margin-bottom: 25px;
-    color: var(--cor-texto);
+.post-date {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  color: var(--muted);
+  font-weight: 300;
 }
 
-/* Botão Verde Floresta */
-.btn-leia-mais {
-    display: inline-block;
-    text-decoration: none;
-    color: var(--cor-destaque);
-    font-weight: 600;
-    border: 2px solid var(--cor-destaque);
-    padding: 8px 25px;
-    border-radius: 25px;
-    transition: all 0.3s ease;
+.post-title {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
 }
 
-.btn-leia-mais:hover {
-    background-color: var(--cor-destaque);
-    color: var(--cor-branco);
-    border-color: var(--cor-destaque);
+.post-card:nth-child(1) .post-title { font-size: 1.85rem; }
+
+.post-excerpt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  line-height: 1.75;
+  color: var(--muted);
+  font-weight: 300;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-/* Quando o post tiver a classe 'post-split', ele usa Flexbox */
-.post-split {
-    display: flex;
-    align-items: stretch; 
+.post-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1.25rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--terra);
+  text-decoration: none;
+  font-weight: 500;
+  transition: gap 0.2s ease;
 }
 
-.post-split-image {
-    flex: 0 0 49%; 
-    max-width: 49%;
-    display: flex;
-    flex-direction: column; /* Transforma a caixa numa coluna */
+.post-link:hover { gap: 0.7rem; }
+
+.post-link::after {
+  content: '→';
+  font-size: 0.9rem;
 }
 
-.post-split .post-content {
-    flex: 1; 
-    display: flex;
+/* ─── Card de citação (fundo escuro) ─── */
+.post-card.is-quote .post-card-body {
+  background: var(--ink);
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem;
+}
+
+.post-card.is-quote .post-title {
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--cream);
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.post-card.is-quote .post-author {
+  margin-top: 1.25rem;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.post-card.is-quote .post-link  { color: var(--gold); }
+.post-card.is-quote .post-category { color: var(--gold); }
+.post-card.is-quote .post-date  { color: rgba(247, 242, 234, 0.4); }
+
+/* ═══════════════════════════════════════════════
+   PÁGINA DE POST — HERO
+   ═══════════════════════════════════════════════ */
+.post-hero {
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.post-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.8) brightness(0.88);
+  animation: slowZoom 12s ease both;
+}
+
+.post-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(28, 26, 22, 0.6));
+}
+
+/* ═══════════════════════════════════════════════
+   PÁGINA DE POST — CONTEÚDO
+   ═══════════════════════════════════════════════ */
+.post-wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 2rem 6rem;
+  animation: riseUp 0.7s ease 0.1s both;
+}
+
+.post-header {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  margin-bottom: 3rem;
+}
+
+.post-header .post-meta { margin-bottom: 1.5rem; }
+
+.post-header .post-title {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 0;
+}
+
+.post-body {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: #2e2b25;
+}
+
+.post-body p { margin-bottom: 1.6em; }
+
+.post-body p:first-child::first-letter {
+  font-size: 4.5rem;
+  line-height: 0.8;
+  float: left;
+  margin: 0.08em 0.12em 0 0;
+  font-family: var(--serif);
+  font-weight: 600;
+  color: var(--terra);
+}
+
+.post-body .post-author {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.post-body .post-author span {
+  color: var(--terra);
+  font-weight: 500;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 3.5rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--terra);
+  text-decoration: none;
+  font-weight: 500;
+  transition: gap 0.2s ease;
+}
+
+.back-link::before { content: '←'; font-size: 0.9rem; }
+.back-link:hover   { gap: 0.7rem; }
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVO
+   ═══════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-image { height: 55vw; }
+  .hero-text  { padding: 3rem 2rem 2.5rem; }
+
+  .posts-grid { grid-template-columns: 1fr; }
+  .post-card:nth-child(n) { grid-column: span 12; }
+
+  .topbar       { padding: 1rem 1.5rem; }
+  .section-label { padding: 2.5rem 1.5rem 1rem; }
+
+  footer {
     flex-direction: column;
-    justify-content: center; /* Centraliza o texto verticalmente! */
-}
-
-.post-split-image img {
-    width: 100%;
-    height: 100%;
-    flex-grow: 1; /* Força a imagem a preencher qualquer lacuna */
-    object-fit: cover; 
-    display: block; 
-    /* Arredondamento direto na imagem para evitar bugs do navegador */
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-}
-
-/* Ajuste para celular */
-@media (max-width: 640px) {
-    .post-split {
-        flex-direction: column; 
-    }
-    .post-split-image {
-        max-width: 100%;
-        height: 495px; /* Mantive a sua altura preferida! */
-    }
-    .post-split-image img {
-        border-bottom-left-radius: 0; /* Remove o arredondamento de baixo no celular */
-        border-top-right-radius: 12px; /* Arredonda o topo direito para acompanhar o cartão */
-    }
-}
-
-footer {
+    gap: 1rem;
+    padding: 2rem 1.5rem;
     text-align: center;
-    padding: 30px 20px;
-    color: var(--cor-secundaria);
-    margin-top: 40px;
+  }
+
+  .footer-copy { text-align: center; }
+}
+
+@media (max-width: 700px) {
+  .post-hero   { height: 42vh; }
+  .post-wrapper { padding: 0 1.25rem 4rem; }
+
+  footer { padding: 2rem 1.25rem; }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  .post-card:nth-child(1) { grid-column: span 12; }
+  .post-card:nth-child(2) { grid-column: span 6; }
+  .post-card:nth-child(3) { grid-column: span 6; }
+  .post-card:nth-child(4) { grid-column: span 6; }
+  .post-card:nth-child(5) { grid-column: span 6; }
 }
